@@ -1,0 +1,118 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.env
+
+# Django migrations
+**/migrations/*
+
+# If you are using SQLite, ignore the database file
+db.sqlite3
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Environments
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+
+# Environments
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+.nox/
+cov/
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+.coverage
+
+# django-extensions stuff
+dump.rdb
+
+# Sphinx documentation
+docs/_build/
+
+# Pycharm files
+.idea/
+
+# Local history for PyCharm
+.idea/**/localHistory/
+
+# macOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+ehthumbs.db
+
+# Visual Studio Code files
+.vscode/
+.history/
+
+# JetBrains Rider
+.idea/
+.idea_modules/
+.idea_modules.xml
+.idea.properties
+.idea.properties.xml
+.idea.properties.xml.version
+
+# Local .env files
+.env.local
+.env.development.local
+.en

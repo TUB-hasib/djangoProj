@@ -42,8 +42,6 @@ def transform_excel_file(sheet):
 
     return data_dict
 
-
-
 def read_document(url):
     data_sheet = open_excel_file(url)
     data = transform_excel_file(data_sheet)

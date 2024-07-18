@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from openpyxl import load_workbook
-import json
+import json, os
 
 def open_excel_file(path):
     try:
@@ -10,7 +10,7 @@ def open_excel_file(path):
         return sheet
 
     except FileNotFoundError:
-        print("The file 'example.xlsx' was not found.")
+        print(f"The file {path} was not found.")
     except openpyxl.utils.exceptions.InvalidFileException:
         print("The file 'example.xlsx' is not a valid Excel file.")
     except Exception as e:
@@ -19,13 +19,17 @@ def open_excel_file(path):
 def transform_excel_file(sheet):
     #read header
     headers = []
+    count_header= 0
     for cell in sheet[1]:
         val = cell.value if cell.value is not None else ''
         headers.append(str(val))
+        count_header = count_header + 1
+        if count_header == 10:
+            break 
 
     # read data 
     data_list = []
-    for row in sheet.iter_rows(min_row=2, max_row=10): #strating from second row as 1st row is header
+    for row in sheet.iter_rows(min_row=2, max_row=5, max_col=10): #strating from second row as 1st row is header
         row_val= []
         for cell in row:
             print(cell.value)
@@ -37,18 +41,15 @@ def transform_excel_file(sheet):
     data_dict = {}
     data_dict['headers'] = headers
     data_dict['value'] = data_list
-
-    json_data = json.dumps(data_dict)
-
     return data_dict
 
 def read_document(url):
     data_sheet = open_excel_file(url)
     data = transform_excel_file(data_sheet)
-    # return HttpResponse(f"Hello Geeks {data}")
     print(data)
     print(type(data))
+    return data
 
 
-exel_file_path = './static/the-office-lines.xlsx'
-read_document(exel_file_path)
+# exel_file_path = '.static/the-office-lines.xlsx'
+# read_document(exel_file_path)

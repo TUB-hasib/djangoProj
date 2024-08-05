@@ -116,3 +116,6 @@ ehthumbs.db
 .env.local
 .env.development.local
 .en
+
+#storage files
+minio/**
